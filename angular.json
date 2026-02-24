@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ventas": {
+    "prestamos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -25,7 +25,12 @@
               }
             ],
             "styles": [
+              "src/material-theme.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
             ]
           },
           "configurations": {
@@ -56,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ventas:build:production"
+              "buildTarget": "prestamos:build:production"
             },
             "development": {
-              "buildTarget": "ventas:build:development"
+              "buildTarget": "prestamos:build:development"
             }
           },
           "defaultConfiguration": "development"

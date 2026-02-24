@@ -1,0 +1,46 @@
+<div class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h5 class="fw-bold mb-0">Bienvenido, {{nombreUsuario}}</h5>
+      <button class="btn btn-dark" (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+  
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mb-4">
+      <li class="nav-item">
+        <a class="nav-link" [class.active]="vistaActiva === 'prestamos'"
+          (click)="vistaActiva = 'prestamos'" style="cursor:pointer">Préstamos</a>
+      </li>
+    </ul>
+  
+    <div *ngIf="vistaActiva === 'prestamos'">
+  
+      <!-- Solicitar Préstamo -->
+      <div class="card p-4 shadow-sm mb-4">
+        <h5 class="fw-bold mb-1">Solicitar Préstamo</h5>
+        <p class="text-muted mb-3">Ingrese el monto que desea solicitar</p>
+  
+        <div class="mb-3">
+          <label class="form-label">Monto</label>
+          <input type="number" class="form-control" placeholder="Monto" name="monto" [(ngModel)]="monto">
+        </div>
+  
+        <div class="mb-3">
+          <label class="form-label">Plazo (meses)</label>
+          <input type="number" class="form-control" placeholder="Plazo" name="plazo" [(ngModel)]="plazo">
+        </div>
+  
+        <button class="btn btn-dark" (click)="solicitarPrestamo()">Solicitar</button>
+      </div>
+  
+      <!-- Mis Préstamos -->
+      <div class="card p-4 shadow-sm">
+        <h5 class="fw-bold mb-3">Mis Préstamos</h5>
+        <p *ngFor="let prestamo of listaPrestamos" class="mb-1">
+          Monto: ${{prestamo.monto}} - Estado: {{prestamo.estado | lowercase}}
+        </p>
+        <p *ngIf="listaPrestamos.length === 0" class="text-muted">No tienes préstamos registrados.</p>
+      </div>
+  
+    </div>
+  </div>
