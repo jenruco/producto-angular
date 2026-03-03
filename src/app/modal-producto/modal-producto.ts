@@ -1,8 +1,6 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
-import { CommonModule, LowerCasePipe } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LoginService } from '../login/service/login-service';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductoService } from '../service/producto-service';
 import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -16,8 +14,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-modal-producto',
   standalone: true,
-  imports: [LowerCasePipe, 
-    CommonModule, 
+  imports: [CommonModule, 
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
