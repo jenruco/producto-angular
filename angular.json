@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "prestamos": {
+    "productos": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -61,10 +61,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "prestamos:build:production"
+              "buildTarget": "productos:build:production"
             },
             "development": {
-              "buildTarget": "prestamos:build:development"
+              "buildTarget": "productos:build:development"
             }
           },
           "defaultConfiguration": "development"

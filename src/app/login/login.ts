@@ -34,12 +34,7 @@ export class Login implements OnInit {
           nombre: response.nombre,
         }
         localStorage.setItem('sesion', JSON.stringify(infoSesion));
-
-        if(infoSesion.rol === 'ADMIN') {
-          this._router.navigate(['/prestamo-admin']);
-        } else if(infoSesion.rol === 'USER') {
-          this._router.navigate(['/prestamo-user']);
-        }
+        this._router.navigate(['/producto']);
       },
       error: (error) => {
         localStorage.setItem('sesion', '');

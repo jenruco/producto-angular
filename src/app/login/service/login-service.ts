@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoginResDto } from '../dto/LoginResDto';
 import { LoginReqDto } from '../dto/LoginReqDto';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class LoginService {
 
-  private URL = "http://localhost:8080";
+  private URL = environment.apiUrl;
 
   constructor(
     private http: HttpClient

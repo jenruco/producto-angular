@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
 import { Login } from './login/login';
-import { PrestamoAdmin } from './prestamo-admin/prestamo-admin';
-import { PrestamoUser } from './prestamo-user/prestamo-user';
 import { authGuard } from './core/guard/auth-guard';
+import { Producto } from './producto/producto';
 
 export const routes: Routes = [
     {
@@ -15,13 +14,8 @@ export const routes: Routes = [
         component: Login
     },
     {
-        path: 'prestamo-admin',
-        component: PrestamoAdmin,
-        canActivate: [authGuard]
-    },
-    {
-        path: 'prestamo-user',
-        component: PrestamoUser,
+        path: 'producto',
+        component: Producto,
         canActivate: [authGuard]
     }
 ];
